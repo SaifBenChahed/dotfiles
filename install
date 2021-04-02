@@ -22,8 +22,9 @@ startProjector() {
     # Prevent projector from prompting to agree to a license
     # https://github.com/JetBrains/projector-installer/blob/ee878ddee0795a910b9913d62fbb305f6985247c/projector_installer/cmd.py#L25
     mkdir -p ~/.projector/configs
-    tmux new -d -s projector ~/.local/bin/projector ide install "${idePattern}"
+    tmux new -d -s projector ~/.local/bin/projector ide install --no-auto-run "${idePattern}"
 }
 
 sudo usermod --shell /bin/bash ${USER}
 startProjector 'RubyMine 2020.3.2'
+export PATH=~/.local/bin/projector:$PATH
