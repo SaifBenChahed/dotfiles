@@ -27,3 +27,5 @@ startProjector() {
 
 sudo usermod --shell /bin/bash ${USER}
 startProjector 'RubyMine 2020.3.2'
+
+ln -sf ~/dotfiles/.bash_profile ~/.bash_profile
